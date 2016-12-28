@@ -312,12 +312,9 @@ def reverse_list_in_place(items):
         ['I', 'love', 'cookies']
     """
 
-    ph = items[0]
-    for i in range(1,len(items)+1):
-        items[i] = items[-i-1]
-        print i
-    items[-1] = ph
-    return items
+    for i in range(len(items)/2):
+        items[i], items[-i-1] = items[-i-1], items[i]
+
 
 def duplicates(items):
     """Return list of words from input list which were duplicates.
